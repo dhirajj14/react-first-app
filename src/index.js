@@ -1,6 +1,11 @@
-import React, { Component } from 'react'
-import ReactDOM, {render} from 'react-dom'
+import React from 'react'
+import {render} from 'react-dom'
 
+let bookList = [
+  {title:'Spark Essential', author: 'Dhiraj Jain', pages:900},
+  {title:'Web Integration', author: 'Dhiraj Jain', pages:500},
+  {title:'Embedded System', author: 'Dhiraj Jain', pages:700}
+]
 const Book = ({title, author, pages}) => {
   return(
     <section>
@@ -10,19 +15,19 @@ const Book = ({title, author, pages}) => {
     </section>
   )
 }
-const Library = () => {
+const Library = ({books}) => {
   return(
     <div>
-      <Book title="Spark Essential" author="Dhiraj" pages={900}/>
-      <Book title="Web" author="Dhiraj" pages={500}/>
-      <Book title="Embbeded System" author="Dhiraj" pages={300}/>
+      {books.map(
+        (book, i) => <Book key={i} title={book.title} author={book.author} pages={book.pages}/>
+      )}
     </div>
   )
 }
 
 render(
   <div>
-    <Library/>
+    <Library books={bookList}/>
   </div>,
   document.getElementById('root')
   )
