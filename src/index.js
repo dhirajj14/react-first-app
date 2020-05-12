@@ -5,7 +5,7 @@ class Message extends React.Component{
   render(){
     return(
       <div>
-        <h1>Hello World</h1>
+  <h1>{this.props.msg}</h1>
       </div>
     )
   }
@@ -13,6 +13,6 @@ class Message extends React.Component{
 
 
 ReactDOM.render(
-  <Message />,
+  <Message msg="How are you?"/>,
   document.getElementById('root')
   )
