@@ -33,6 +33,15 @@ class Library extends React.Component{
     freeBookmark: true,
     hiring: true
   }
+
+  componentDidMount(){
+    console.log("Component mounted");
+  }
+
+  componentDidUpdate(){
+    console.log("component updated!")
+  }
+  
   toggleOpenClosed = () => {
     this.setState( prevState => ({
       open: !prevState.open
@@ -44,7 +53,7 @@ class Library extends React.Component{
       <div>
         {this.state.hiring ? <Hiring/> : <NotHiring/>}
         <h1>The library is {this.state.open ? 'open' : 'closed'}</h1>
-        <input type="Button" onClick={this.toggleOpenClosed} value="Change"></input>
+        <button onClick={this.toggleOpenClosed}>Change</button>
         {books.map(
           (book, i) => 
             <Book 
