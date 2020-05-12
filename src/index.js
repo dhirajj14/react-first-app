@@ -1,18 +1,18 @@
 import React from 'react'
-import ReactDom from 'react-dom'
+import ReactDOM from 'react-dom'
 
-var style = {
-  backgroundColor: 'orange',
-  color: 'white',
-  fontFamily: 'Arial'
+class Message extends React.Component{
+  render(){
+    return(
+      <div>
+        <h1>Hello World</h1>
+      </div>
+    )
+  }
 }
 
 
-
-ReactDom.render(
-  <div style={style}> 
-    <h1>Hello world</h1>
-    <p id="heading-par">This is JSX</p>
-  </div>,
+ReactDOM.render(
+  <Message />,
   document.getElementById('root')
-)
+  )
