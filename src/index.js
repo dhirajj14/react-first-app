@@ -15,16 +15,27 @@ const Book = ({title, author, pages}) => {
     </section>
   )
 }
-const Library = ({books}) => {
-  return(
-    <div>
-      {books.map(
-        (book, i) => <Book key={i} title={book.title} author={book.author} pages={book.pages}/>
-      )}
-    </div>
-  )
-}
 
+class Library extends React.Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      open : true
+    }
+  }
+  render(){
+    const {books} = this.props;
+    return(
+      <div>
+        <h1>The library is {this.state.open ? 'open' : 'closed'}</h1>
+        {books.map(
+          (book, i) => <Book key={i} title={book.title} author={book.author} pages={book.pages}/>
+        )}
+      </div>
+    )  
+  }
+}
+  
 render(
   <div>
     <Library books={bookList}/>
