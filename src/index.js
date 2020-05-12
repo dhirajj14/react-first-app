@@ -10,19 +10,20 @@ let skiData = {
 
 class SkiDayCounter extends Component{
   render(){
+    const {total, powder, backcountry, goal} = this.props
     return(
       <section>
         <div>
-          <p>Total Days:{this.props.total}</p>
+          <p>Total Days:{total}</p>
         </div>
         <div>
-          <p>Powder Days: {this.props.powder}</p>
+          <p>Powder Days: {powder}</p>
         </div>
         <div>
-          <p>Backcountry Days: {this.props.backcountry}</p>
+          <p>Backcountry Days: {backcountry}</p>
         </div>
         <div>
-          <p>Goal Days: {this.props.goal}</p>
+          <p>Goal Days: {goal}</p>
         </div>
       </section>
     )
